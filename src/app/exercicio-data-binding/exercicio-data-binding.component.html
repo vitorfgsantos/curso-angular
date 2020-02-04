@@ -1,0 +1,20 @@
+<h1> {{ informacao }} </h1>
+
+<p [attr.aria-label]="textoAcessivel + ' String ' + valorDoInput">
+  Um texto qualquer que deve ser acessível
+</p>
+
+<h1>{{ valorDoInput }}</h1>
+
+<br>
+<img [src]="imagemURL">
+
+<hr>
+<h1> Testando EventBinding</h1>
+
+<input type="text" [value]="valorDoInput" (keyup)="digitouAlgo($event)">
+
+<button (click)="onBotaoClique($event)" (mouseenter)="passouMouse()">Clique em mim!</button>
+
+<br><br><br><br><br><br>
+
