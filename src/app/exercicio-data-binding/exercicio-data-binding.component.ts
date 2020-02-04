@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ExercicioDataBindingComponent implements OnInit {
 
   valorInicial = 100;
+  valorInicialString = 'EXPLICANDO'
 
   @Output() botaoClicado = new EventEmitter();
   @Input() informacao: string;

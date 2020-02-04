@@ -1,17 +1,25 @@
 
-<h2>
+<!-- <h2>
   Valor no ExercicioDataBinding: {{ valorInicial }}
-</h2>
+</h2> -->
 
-<app-exercicio-contador
+<!-- <app-exercicio-contador
   [valor]="valorInicial"
   (atualizouValor)="onAtualizouValor($event)"
-></app-exercicio-contador>
+></app-exercicio-contador> -->
 
 <!-- <app-exercicio-contador
   [(valor)]="valorInicial"
-  (atualizouValor)="onAtualizouValor($event)"
 ></app-exercicio-contador> -->
+
+
+<h2>
+  Valor no ExercicioDataBinding: {{ valorInicialString }}
+</h2>
+
+<app-exercicio-two-way
+  [(valorString)]="valorInicialString"
+></app-exercicio-two-way>
 
 
 

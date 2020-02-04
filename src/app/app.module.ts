@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ExercicioDataBindingComponent } from './exercicio-data-binding/exercicio-data-binding.component';
 import { ExercicioContadorComponent } from './exercicio-contador/exercicio-contador.component';
+import { ExercicioTwoWayComponent } from './exercicio-two-way/exercicio-two-way.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ExercicioContadorComponent } from './exercicio-contador/exercicio-conta
     HomeComponent,
     ExercicioDataBindingComponent,
     ExercicioContadorComponent,
+    ExercicioTwoWayComponent,
   ],
   imports: [
     BrowserModule,

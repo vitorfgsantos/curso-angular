@@ -8,7 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ExercicioContadorComponent implements OnInit {
 
   @Input() valor: number;
-  @Output() atualizouValor = new EventEmitter();
+  @Output() valorChange = new EventEmitter();
+  // @Output() atualizouValor = new EventEmitter();
 
   constructor() { }
 
@@ -17,12 +18,14 @@ export class ExercicioContadorComponent implements OnInit {
 
   incrementar() {
     this.valor = this.valor + 1;
-    this.atualizouValor.emit(this.valor);
+    this.valorChange.emit(this.valor);
+    // this.atualizouValor.emit(this.valor);
   }
 
   decrementar() {
     this.valor = this.valor - 1;
-    this.atualizouValor.emit(this.valor);
+    this.valorChange.emit(this.valor);
+    // this.atualizouValor.emit(this.valor);
   }
 
 }
