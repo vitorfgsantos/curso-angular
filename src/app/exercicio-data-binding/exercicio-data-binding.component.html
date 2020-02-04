@@ -1,4 +1,21 @@
-<h1> {{ informacao }} </h1>
+
+<h2>
+  Valor no ExercicioDataBinding: {{ valorInicial }}
+</h2>
+
+<app-exercicio-contador
+  [valor]="valorInicial"
+  (atualizouValor)="onAtualizouValor($event)"
+></app-exercicio-contador>
+
+<!-- <app-exercicio-contador
+  [(valor)]="valorInicial"
+  (atualizouValor)="onAtualizouValor($event)"
+></app-exercicio-contador> -->
+
+
+
+<!-- <h1> {{ informacao }} </h1>
 
 <p [attr.aria-label]="textoAcessivel + ' String ' + valorDoInput">
   Um texto qualquer que deve ser acessível
@@ -16,5 +33,5 @@
 
 <button (click)="onBotaoClique($event)" (mouseenter)="passouMouse()">Clique em mim!</button>
 
-<br><br><br><br><br><br>
+<br><br><br><br><br><br> -->
 
