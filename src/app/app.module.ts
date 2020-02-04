@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ExercicioDataBindingComponent } from './exercicio-data-binding/exercicio-data-binding.component';
 import { ExercicioContadorComponent } from './exercicio-contador/exercicio-contador.component';
 import { ExercicioTwoWayComponent } from './exercicio-two-way/exercicio-two-way.component';
+import { ExercicioDiretivasComponent } from './exercicio-diretivas/exercicio-diretivas.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ExercicioTwoWayComponent } from './exercicio-two-way/exercicio-two-way.
     ExercicioDataBindingComponent,
     ExercicioContadorComponent,
     ExercicioTwoWayComponent,
+    ExercicioDiretivasComponent,
   ],
   imports: [
     BrowserModule,

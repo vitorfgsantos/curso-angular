@@ -1,0 +1,36 @@
+<!-- <button (click)="carregarInformacoes()">Trocar exibir</button>
+
+Carregando: {{ carregando }}
+
+<h2 *ngIf="carregando; else conteudo"> |||| Carregando.... </h2>
+
+<ng-template #conteudo>
+  <h2> Meu conteúdo carregado. </h2>
+</ng-template>
+
+<p [hidden]="carregando">
+  Elemento com hidden
+</p> -->
+
+<hr>
+<h1> Testando *ngFor</h1>
+
+<!-- <ul>
+  <li>Banana</li>
+  <li>Maçã</li>
+  <li>Pastel</li>
+  <li>Churrasco</li>
+  <li>Pizza</li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let fruta of listaFrutas">
+    {{ fruta }}
+  </li>
+</ul>
+
+
+
+<p *ngFor="let carro of listaCarros">
+  {{ carro.placa }} - {{ carro.cor }}
+</p>
