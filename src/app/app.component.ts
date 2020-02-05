@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   title: string = 'UM TÍTULO QUALQUER';
   outraVariavel = 2020;
@@ -13,6 +13,10 @@ export class AppComponent {
   informacaoParaDataBinding = 'INFORMACAO PASSADO PELO APP.COMPONENT';
 
   constructor() {
+    
+  }
+
+  ngOnInit() {
     setTimeout(() => {
       this.title = 'MUDEI A VARIAVEL TITLE!!!!!!!!!';
       this.outraVariavel = 10;

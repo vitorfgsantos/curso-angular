@@ -1,0 +1,32 @@
+<button (click)="exibir()">
+  Mudar para vermelho
+</button>
+
+<button (click)="classeASerUtilizada = 'verde'">
+  Mudar para verde
+</button>
+
+<button (click)="deveSerVerde = !deveSerVerde">
+  Trocar deveSerVerde
+</button>
+
+<h1 [ngClass]="deveSerVerde ? 'verde' : 'vermelho'">
+  Meu texto para testar ngClass
+</h1>
+
+<hr>
+<p>
+  Classe: 
+  <!-- <input type="text"
+    [value]="classeUsuario"
+    (input)="classeUsuario = $event.target.value" > -->
+    <input type="text" [(ngModel)]="classeUsuario" #meuInput>
+
+
+    <select [(ngModel)]="valorSelecionado">
+      <option value="verde">Verde</option>
+      <option value="vermelho">Vermelho</option>
+    </select>
+</p>
+
+<h2 [ngClass]="valorSelecionado"> Classe aplicada </h2>
