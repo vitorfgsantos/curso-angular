@@ -1,8 +1,10 @@
-<!-- <button (click)="carregarInformacoes()">Trocar exibir</button>
+<h1> Testando *ngIf</h1>
 
-Carregando: {{ carregando }}
+<button (click)="carregarInformacoes()">Trocar exibir</button>
 
-<h2 *ngIf="carregando; else conteudo"> |||| Carregando.... </h2>
+<p>Carregando: {{ carregando }}</p>
+
+<h2 *ngIf="carregando; else conteudo"> Carregando.... </h2>
 
 <ng-template #conteudo>
   <h2> Meu conteúdo carregado. </h2>
@@ -10,27 +12,44 @@ Carregando: {{ carregando }}
 
 <p [hidden]="carregando">
   Elemento com hidden
-</p> -->
-
+</p>
 <hr>
+
+
+
 <h1> Testando *ngFor</h1>
-
-<!-- <ul>
-  <li>Banana</li>
-  <li>Maçã</li>
-  <li>Pastel</li>
-  <li>Churrasco</li>
-  <li>Pizza</li>
-</ul> -->
-
 <ul>
-  <li *ngFor="let fruta of listaFrutas">
+  <li *ngFor="let fruta of listaFrutas; let even = even">
     {{ fruta }}
   </li>
 </ul>
 
+<ul>
+  <li *ngFor="let carro of listaCarros">
+    {{ carro.placa }} - {{ carro.cor }}
+  </li>
+</ul>
+<hr>
 
 
-<p *ngFor="let carro of listaCarros">
-  {{ carro.placa }} - {{ carro.cor }}
-</p>
+
+<h1> Exercíocio *ngFor e *ngIf</h1>
+<h2>Exercício Diretivas ngIf e ngFor</h2>
+<p> Utilize o arquivo <code><b>dados.js</b></code> no link https://github.com/vitorfgsantos/curso-angular-diretivas, para obter um Array com diversos memes agrupados por categoria.</p>
+<p> Copie a constante para seu projeto, e repita cada uma das imagens no template, agrupando por categoria. </p>
+<p> Regra: não exiba memes em posições pares. No lugar disto, exiba PAR </p>
+<p>Dica: o prefixo das imagens deve ser: https://raw.githubusercontent.com/vitorfgsantos/curso-angular-diretivas/master/images</p>
+
+
+<ul>
+  <li *ngFor="let memes_agrupados of MEMES_AGRUPADOS_POR_CATEGORIA">
+
+    <h1>{{ memes_agrupados.categoria }}</h1>
+
+    <div *ngFor="let meme of memes_agrupados.memes; let par = even">
+      <img [src]="PREFIXO_IMAGEM_URL + meme.imagemURL" *ngIf="par">
+      <p *ngIf="!par"> IMAGEM PAR!</p>
+    </div>
+
+  </li>
+</ul>

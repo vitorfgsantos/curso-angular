@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { MEMES_AGRUPADOS_POR_CATEGORIA } from './exercicio-diretivas.constants';
 
 @Component({
   selector: 'app-exercicio-diretivas',
   templateUrl: './exercicio-diretivas.component.html',
   styleUrls: ['./exercicio-diretivas.component.scss']
 })
-export class ExercicioDiretivasComponent implements OnInit {
+export class ExercicioDiretivasComponent {
+
+  MEMES_AGRUPADOS_POR_CATEGORIA = MEMES_AGRUPADOS_POR_CATEGORIA;
+  PREFIXO_IMAGEM_URL = 'https://raw.githubusercontent.com/vitorfgsantos/curso-angular-diretivas/master/images';
 
   exibir = true;
   carregando = true;
+
+  variavel: string = 'texto';
 
   listaFrutas = [
     'Banana',
@@ -35,11 +42,9 @@ export class ExercicioDiretivasComponent implements OnInit {
   listaCarrosBrancos = [];
 
   constructor() {
-    console.log('!!!!!!!!passou aqui')
     this.listaCarrosBrancos = this.carrosBrancos();
-  }
 
-  ngOnInit() {
+    this.carregarInformacoes();
   }
 
   trocarExibir() {
@@ -59,8 +64,5 @@ export class ExercicioDiretivasComponent implements OnInit {
       return carro.cor === 'Branco';
     });
   }
-
-
-
 
 }
