@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { Transferencia } from './extrato.interfaces';
@@ -15,8 +16,10 @@ export class ExtratoService {
     private http: HttpClient,
   ) { }
 
-  getExtrato(): Promise<Transferencia[]> {
-    return this.http.get<Transferencia[]>(this.API_URL + '/transacoes').toPromise();
+  getExtrato(): Observable<Transferencia[]> {
+    return this.http.get<Transferencia[]>(this.API_URL + '/transacoes');
+    // return this.http.get<Transferencia[]>(this.API_URL + '/transacoes').toPromise();
     // return this.http.get(`${this.API_URL}/transacoes`).toPromise();
   }
+
 }

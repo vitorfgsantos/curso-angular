@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { delay, finalize, take } from 'rxjs/operators';
 
 import { Transferencia } from './extrato.interfaces';
 import { ExtratoService } from './extrato.service';
@@ -10,15 +11,25 @@ import { ExtratoService } from './extrato.service';
 })
 export class ExtratoComponent implements OnInit {
 
-  extrato: Transferencia[];
-  
+  extrato: Array<Transferencia>;
+  estaCarregando: boolean;
+
   constructor(
     private extratoService: ExtratoService,
   ) { }
 
   ngOnInit() {
+    this.estaCarregando = true;
     this.extratoService.getExtrato()
-      .then(response => {
+      .pipe(
+        // tap(resposta => console.log('passoiu por aqui')),
+        delay(2000),
+        take(1),
+        finalize(() => {
+          this.estaCarregando = false;
+        }),
+      )
+      .subscribe(response => {
         this.extrato = response;
       });
   }

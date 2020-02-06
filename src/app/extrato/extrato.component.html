@@ -1,1 +1,23 @@
-<p>extrato works!</p>
+<h2 *ngIf="estaCarregando">
+  Carregando...
+</h2>
+
+<table *ngIf="!estaCarregando">
+  <tr>
+    <th>Id</th>
+    <th>Descrição</th>
+    <th>Categoria</th>
+    <th>Data</th>
+    <th>Valor</th>
+  </tr>
+
+  <tr *ngFor="let transacao of extrato">
+    <td>{{ transacao.id }}</td>
+    <td>{{ transacao.descricao }}</td>
+    <td>{{ transacao.categoria }}</td>
+    <td>{{ transacao.data | date }}</td>
+    <td [ngClass]="transacao.valor > 0 ? 'verde' : 'vermelho'">
+      {{ transacao.valor | currency:'BRL' }}
+    </td>
+  </tr>
+</table>
