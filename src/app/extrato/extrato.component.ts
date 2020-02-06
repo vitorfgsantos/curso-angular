@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Transferencia } from './extrato.interfaces';
+import { ExtratoService } from './extrato.service';
+
 @Component({
   selector: 'app-extrato',
   templateUrl: './extrato.component.html',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExtratoComponent implements OnInit {
 
-  constructor() { }
+  extrato: Transferencia[];
+  
+  constructor(
+    private extratoService: ExtratoService,
+  ) { }
 
   ngOnInit() {
+    this.extratoService.getExtrato()
+      .then(response => {
+        this.extrato = response;
+      });
   }
 
 }
