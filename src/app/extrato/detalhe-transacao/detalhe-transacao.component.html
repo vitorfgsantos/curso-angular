@@ -1,1 +1,14 @@
-<p>detalhe-transacao works!</p>
+
+<div *ngIf="estaCarregando; else conteudo">
+  <h2>Carregando...</h2>
+</div>
+
+<ng-template #conteudo>
+  <ul>
+    <li>Id: {{ transacao.id }}</li>
+    <li>Descrição: {{ transacao.descricao }}</li>
+    <li>Categoria: {{ transacao.categoria }}</li>
+    <li>Data: {{ transacao.data }}</li>
+    <li>Valor: {{ transacao.valor }}</li>
+  </ul>
+</ng-template>

@@ -5,6 +5,8 @@
   </div>
   
   <table *ngIf="!estaCarregando" class="table table-hover">
+
+    <button (click)="paginaAnterior()" [disabled]="page === 1"> Página anterior </button>
     <button (click)="proximaPagina()"> Próxima página </button>
     
     <tr>

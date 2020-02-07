@@ -26,4 +26,8 @@ export class ExtratoService {
     // return this.http.get(`${this.API_URL}/transacoes`).toPromise();
   }
 
+  getTransferenciaPorId(idTransacao): Observable<Transferencia> {
+    return this.http.get<Transferencia>(this.API_URL + '/transacoes/' + idTransacao);
+  }
+
 }

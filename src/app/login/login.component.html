@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="text-center">
+
+  
+  <div class="form-signin pt-5">
+    <h1 class="h3 mb-3 font-weight-normal">Seja bem-vindo!</h1>
+
+    <div class="p-2">
+      <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email">
+    </div>
+
+    <div class="p-2">
+      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="senha">
+    </div>
+
+    <div class="p-2">
+      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Entrar</button>
+    </div>
+
+  </div>
+  
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { delay, finalize, take } from 'rxjs/operators';
+import { finalize, take } from 'rxjs/operators';
 
 import { Transferencia } from './extrato.interfaces';
 import { ExtratoService } from './extrato.service';
@@ -30,7 +30,7 @@ export class ExtratoComponent implements OnInit {
     this.extratoService.getExtrato(this.page)
       .pipe(
         // tap(resposta => console.log('passoiu por aqui')),
-        delay(2000),
+        // delay(2000),
         take(1),
         finalize(() => {
           this.estaCarregando = false;
@@ -48,6 +48,11 @@ export class ExtratoComponent implements OnInit {
 
   proximaPagina() {
     this.page = this.page + 1;
+    this.carregarExtrato();
+  }
+
+  paginaAnterior() {
+    this.page = this.page - 1;
     this.carregarExtrato();
   }
 
