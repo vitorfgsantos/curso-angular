@@ -20,6 +20,7 @@ import { ExercicioTwoWayComponent } from './shared/components/exercicio-two-way/
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
+import { DetalheTransacaoComponent } from './extrato/detalhe-transacao/detalhe-transacao.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -39,6 +40,7 @@ registerLocaleData(localePt, 'pt');
     LoginComponent,
     TransferenciasComponent,
     NaoEncontradoComponent,
+    DetalheTransacaoComponent,
   ],
   imports: [
     BrowserModule,

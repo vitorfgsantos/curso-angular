@@ -1,23 +1,34 @@
-<h2 *ngIf="estaCarregando">
-  Carregando...
-</h2>
+<div class="container text-center p-5">
 
-<table *ngIf="!estaCarregando">
-  <tr>
-    <th>Id</th>
-    <th>Descrição</th>
-    <th>Categoria</th>
-    <th>Data</th>
-    <th>Valor</th>
-  </tr>
-
-  <tr *ngFor="let transacao of extrato">
-    <td>{{ transacao.id }}</td>
-    <td>{{ transacao.descricao }}</td>
-    <td>{{ transacao.categoria }}</td>
-    <td>{{ transacao.data | date }}</td>
-    <td [ngClass]="transacao.valor > 0 ? 'verde' : 'vermelho'">
-      {{ transacao.valor | currency:'BRL' }}
-    </td>
-  </tr>
-</table>
+  <div class="spinner-border" *ngIf="estaCarregando">
+    <span class="sr-only">Carregando...</span>
+  </div>
+  
+  <table *ngIf="!estaCarregando" class="table table-hover">
+    <button (click)="proximaPagina()"> Próxima página </button>
+    
+    <tr>
+      <th>Id</th>
+      <th>Descrição</th>
+      <th>Categoria</th>
+      <th>Data</th>
+      <th>Valor</th>
+      <th>Ações</th>
+    </tr>
+  
+    <tr *ngFor="let transacao of extrato">
+      <td>{{ transacao.id }}</td>
+      <td>{{ transacao.descricao }}</td>
+      <td>{{ transacao.categoria }}</td>
+      <td>{{ transacao.data | date }}</td>
+      <td [ngClass]="transacao.valor > 0 ? 'verde' : 'vermelho'">
+        {{ transacao.valor | currency:'BRL' }}
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="irParaDetalhes(transacao.id)">
+          Ver detalhes
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

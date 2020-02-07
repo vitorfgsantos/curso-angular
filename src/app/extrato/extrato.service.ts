@@ -16,8 +16,12 @@ export class ExtratoService {
     private http: HttpClient,
   ) { }
 
-  getExtrato(): Observable<Transferencia[]> {
-    return this.http.get<Transferencia[]>(this.API_URL + '/transacoes');
+  getExtrato(page: number): Observable<Transferencia[]> {
+    return this.http.get<Transferencia[]>(this.API_URL + '/transacoes', {
+      params: {
+        _page: String(page)
+      }
+    });
     // return this.http.get<Transferencia[]>(this.API_URL + '/transacoes').toPromise();
     // return this.http.get(`${this.API_URL}/transacoes`).toPromise();
   }
