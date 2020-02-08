@@ -3,10 +3,7 @@
     {{ titulo }}
   </h1>
 
-  <ul class="nav-bar-list">
-    <li>
-      <a routerLink="login" routerLinkActive="ativado">Login</a>
-    </li>
+  <ul class="nav-bar-list" *ngIf="estaLogado()">
     <li>
       <a routerLink="home" routerLinkActive="ativado">Home</a>
     </li>
@@ -15,6 +12,9 @@
     </li>
     <li>
       <a routerLink="transferencias" routerLinkActive="ativado">Transferencias</a>
+    </li>
+    <li>
+      <button class="btn btn-dark ml-5" (click)="logout()">Sair</button>
     </li>
   </ul>
 </header>

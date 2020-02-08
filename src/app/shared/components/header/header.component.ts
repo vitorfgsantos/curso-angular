@@ -1,4 +1,6 @@
-import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +8,20 @@ import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
   styleUrls: ['header.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class HeaderComponent implements OnChanges {
+export class HeaderComponent {
 
   @Input() titulo: string;
 
-  ngOnChanges() {
-    console.log('ALGO MUDOU!!!');
+  constructor(
+    private authService: AuthService,
+  ) {}
+
+  estaLogado() {
+    return this.authService.estaLogado();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }
