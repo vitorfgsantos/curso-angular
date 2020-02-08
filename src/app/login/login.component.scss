@@ -4,3 +4,7 @@
   padding: 15px;
   margin: 0 auto;
 }
+
+.ng-invalid.ng-touched {
+  border-color: red;
+}

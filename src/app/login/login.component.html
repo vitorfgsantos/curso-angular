@@ -1,21 +1,28 @@
 <div class="text-center">
 
+  <p> Formulário Válido: {{ form.form.valid }}</p>
+  {{ form.form.controls }}
+
   
-  <div class="form-signin pt-5">
+  <form class="form-signin pt-5" #form="ngForm" (ngSubmit)="quandoSubmeter(form.form)">
     <h1 class="h3 mb-3 font-weight-normal">Seja bem-vindo!</h1>
 
     <div class="p-2">
-      <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email">
+      <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" required email>
+      <p *ngIf="exibeErro('email', form.form)"
+      class="text-left">E-mail válido obrigatório.</p>
     </div>
 
     <div class="p-2">
-      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="senha">
+      <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="senha" required>
+      <p *ngIf="exibeErro('password', form.form)"
+      class="text-left">Senha obrigatória</p>
     </div>
 
     <div class="p-2">
-      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Entrar</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" >Entrar</button>
     </div>
 
-  </div>
+  </form>
   
 </div>
