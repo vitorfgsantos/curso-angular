@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DetalheTransacaoComponent } from './extrato/detalhe-transacao/detalhe-transacao.component';
-import { ExtratoComponent } from './extrato/extrato.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { EstaLogadoGuard } from './shared/guards/esta-logado.guard';
@@ -13,7 +10,7 @@ import { TransferenciasComponent } from './transferencias/transferencias.compone
 
 const routes: Routes = [{
   path: 'home',
-  component: HomeComponent,
+  loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
   canActivate: [EstaLogadoGuard],
 }, {
   path: 'login',
@@ -21,11 +18,7 @@ const routes: Routes = [{
   canActivate: [NaoEstaLogadoGuard],
 }, {
   path: 'extrato',
-  component: ExtratoComponent,
-  canActivate: [EstaLogadoGuard],
-}, {
-  path: 'extrato/transacoes/:idTransacao',
-  component: DetalheTransacaoComponent,
+  loadChildren: () => import('./extrato/extrato.module').then(m => m.ExtratoModule),
   canActivate: [EstaLogadoGuard],
 }, {
   path: 'transferencias',

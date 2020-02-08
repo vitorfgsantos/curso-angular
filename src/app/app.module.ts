@@ -4,11 +4,10 @@ import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ExtratoComponent } from './extrato/extrato.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { ExercicioContadorComponent } from './shared/components/exercicio-contador/exercicio-contador.component';
@@ -20,7 +19,6 @@ import { ExercicioTwoWayComponent } from './shared/components/exercicio-two-way/
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
-import { DetalheTransacaoComponent } from './extrato/detalhe-transacao/detalhe-transacao.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -29,24 +27,22 @@ registerLocaleData(localePt, 'pt');
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
     ExercicioDataBindingComponent,
     ExercicioContadorComponent,
     ExercicioTwoWayComponent,
     ExercicioDiretivasComponent,
     ExercicioNgclassComponent,
     ExercicioPipesComponent,
-    ExtratoComponent,
     LoginComponent,
     TransferenciasComponent,
     NaoEncontradoComponent,
-    DetalheTransacaoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ModalModule.forRoot(),
   ],
   providers: [{
       provide: LOCALE_ID,
