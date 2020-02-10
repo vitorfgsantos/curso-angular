@@ -4,7 +4,6 @@ import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +17,7 @@ import { ExercicioPipesComponent } from './shared/components/exercicio-pipes/exe
 import { ExercicioTwoWayComponent } from './shared/components/exercicio-two-way/exercicio-two-way.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { TestesUnitariosComponent } from './testes-unitarios/testes-unitarios.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
 
 registerLocaleData(localePt, 'pt');
@@ -36,13 +36,13 @@ registerLocaleData(localePt, 'pt');
     LoginComponent,
     TransferenciasComponent,
     NaoEncontradoComponent,
+    TestesUnitariosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ModalModule.forRoot(),
   ],
   providers: [{
       provide: LOCALE_ID,
