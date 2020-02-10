@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -17,13 +17,16 @@ export class ExtratoService {
   ) { }
 
   getExtrato(page: number): Observable<Transferencia[]> {
+    const headers = new HttpHeaders({
+      token: '....token de autenticação....',
+    });
+
     return this.http.get<Transferencia[]>(this.API_URL + '/transacoes', {
       params: {
         _page: String(page)
-      }
+      },
+      headers
     });
-    // return this.http.get<Transferencia[]>(this.API_URL + '/transacoes').toPromise();
-    // return this.http.get(`${this.API_URL}/transacoes`).toPromise();
   }
 
   getTransferenciaPorId(idTransacao): Observable<Transferencia> {
