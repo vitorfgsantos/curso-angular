@@ -1,11 +1,15 @@
-import { TestBed, async, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NaoEstaLogadoGuard } from './nao-esta-logado.guard';
 
 describe('NaoEstaLogadoGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NaoEstaLogadoGuard]
+      providers: [NaoEstaLogadoGuard],
+      imports: [
+        RouterTestingModule,
+      ]
     });
   });
 

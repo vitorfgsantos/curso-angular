@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ExtratoComponent } from './extrato.component';
 
@@ -8,7 +10,11 @@ describe('ExtratoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExtratoComponent ]
+      declarations: [ ExtratoComponent ],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+      ]
     })
     .compileComponents();
   }));

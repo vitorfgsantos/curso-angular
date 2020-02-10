@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NaoEncontradoComponent } from './nao-encontrado.component';
 
@@ -8,7 +9,10 @@ describe('NaoEncontradoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NaoEncontradoComponent ]
+      declarations: [ NaoEncontradoComponent ],
+      imports: [
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   }));

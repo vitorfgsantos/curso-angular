@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExercicioDiretivasComponent } from './exercicio-diretivas.component';
@@ -8,7 +9,8 @@ describe('ExercicioDiretivasComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExercicioDiretivasComponent ]
+      declarations: [ ExercicioDiretivasComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
